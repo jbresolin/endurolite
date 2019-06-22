@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Enduro</title>
+  
+  <?php if (isset($res['boot_css']) && $res['boot_css'] === true): ?>
+  <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css"/>
+  <?php endif; ?>
+  <?php if (isset($res['font_awesome']) && $res['font_awesome'] === true): ?>
+  <link rel="stylesheet" href="/assets/css/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
+  <?php endif; ?>
+  <?php if (isset($res['style1']) && $res['style1'] === true): ?>
+  <link rel="stylesheet" href="/assets/css/style1.css"/>
+  <?php endif; ?>  
+  <?php if (isset($res['jquery']) && $res['jquery'] === true): ?>
+  <script src="/assets/js/jquery-3.3.1.min.js"></script>
+  <?php endif; ?>
+  <?php if (isset($res['boot_js_bun']) && $res['boot_js_bun'] === true): ?>
+  <script src="/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <?php endif; ?>
+  <?php if (isset($res['boot_js']) && $res['boot_js'] === true): ?>
+  <script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+  <?php endif; ?>
+  <?php if (isset($res['script1']) && $res['script1'] === true): ?>
+  <script src="/assets/js/script1.js"></script>
+  <?php endif; ?>
+
+</head>
+
+<body>

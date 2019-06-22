@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+
+  <title>Enduro</title>
+
+  <link rel="stylesheet" href="/assets/css/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/> 
+  <link rel="stylesheet" href="/assets/css/style1.css"/>  
+  <script src="/assets/js/jquery-3.3.1.min.js"></script>  
+  <script src="/assets/js/script1.js"></script>
+
+  <script type="text/javascript">
+    var evento_id='<?= $evento_id ?>';
+    var username='<?= $username ?>';
+  </script>
+
+</head>
+
+<body>
+
+<div id="input" class="input hidden">
+  <form id="form">
+    <div class="inputGroup">
+      <input type="number" id="pass_data" placeholder="Carro">
+      <button type="button" id="submit_pass" onclick="addPass()">
+          <i class="fas fa-arrow-right"></i>            
+      </button>
+    </div>
+  </form>
+</div>
+
+<div id="erros" class="errorBox hidden">  
+</div>
+  
+<div class="pass-page">  
+  <div id="display">
+  </div> 
+</div>
+
+<div class="footer shown" id="footer">
+  <div id="serverup" class="serverStatus up hidden">
+    <i>Conexão restabelecida.</i>
+  </div>
+  <div id="serverdown" class="serverStatus down hidden">
+    <i>Conexão perdida, verificando.</i>
+  </div> 
+  <div class="fixfooter">
+    <div>
+      <p>Usuário: <?= $username ?></p>    
+      <p><b>Evento: <?= $evento_id ?></b></p>
+    </div>  
+    <div>
+      <i id="menutoggle" class="fa fa-bars"></i>
+    </div>
+  </div>
+  <div class="hiddenfooter">
+    <div class="checks">    
+      <ul>
+        <li>Suporte banco de dados local<i id="chk1" class="fa fa-spinner fa-spin"></i></li>
+        <li>Suporte dados locais<i id="chk2" class="fa fa-spinner fa-spin"></i></li>
+        <li>Dados pré-existentes<i id="chk3" class="fa fa-spinner fa-spin"></i></li>
+        <li>Carregar dados servidor<i id="chk4" class="fa fa-spinner fa-spin"></i></li>
+        <li>Sincronização relógio<i id="chk5" class="fa fa-spinner fa-spin"></i></li>
+        <li>Prova iniciada<i id="chk6" class="fa fa-spinner fa-spin"></i></li>
+      </ul>
+    </div>
+    <div class="logout">
+      <a href="/roleselect"><i class="far fa-edit"></i>&nbsp;Selecionar Função</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="javascript:;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>&nbsp;Sair</a>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Enduro</title>
+
+  <link rel="stylesheet" href="/assets/css/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
+
+  <link rel="stylesheet" href="/assets/css/style3.css"/>
+
+</head>
+
+<body>
+  <div class="select-page">
+    <div class="box">
+      <p style="font-size: 1.2rem;"><b>Sistema de Cronometragem de Enduro</b></p>
+      <p style="font-size: 2rem;"><u>Selecione a função desejada.</u></p>
+      <br>
+      <?php if(isset($error_message)): ?>
+        <div class="error">
+          <p><?= $error_message ?></p>
+        </div>
+      <?php endif; ?>
+
+      <?php if($roles === false): ?>
+        <div class="error">
+          <p>Nenhuma função associada com o seu usuário.</p>
+          <p>Atualize a página para pesquisar novamente ou consulte o gestor da prova.</p>
+        </div>
+      <?php else: ?>      
+        <table id="roles">
+          <tr>
+            <th>Código evento</th>
+            <th>Nome evento</th>
+            <th>Função</th>
+            <th>&nbsp;</th>
+          </tr>
+
+          <?php foreach($roles as $role): ?>
+          <tr>
+            <td><?= $role['evento_id'] ?></td>
+            <td><?= $role['titulo'] ?></td>
+            <td>
+              <?php
+                if ($role['role'] == 'INPUT') {
+                  echo 'Contagem';
+                } elseif ($role['role'] == 'MGMT') {
+                  echo 'Gestão';
+                } else {
+                  echo 'Outra';
+                }
+              ?>
+            </td>
+            <td>
+              <form action="/roleoption" method="post">
+                <input type="hidden" name="role" value="<?= $role['role'] ?>">
+                <input type="hidden" name="evento_id" value="<?= $role['evento_id'] ?>">
+                <input type="hidden" name="titulo" value="<?= $role['titulo'] ?>">
+                <button type="submit">
+                  <i class="far fa-check-square" style="font-size:1.5rem"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <?php endforeach; ?>
+        </table>
+      <?php endif; ?>      
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto", sans-serif;
+  padding-top: 110px;
+  min-width: 360px;
+}
+
+.input {
+  display: inline-block;
+  width: 320px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-top: 5px;
+  margin-left: -180px;
+  padding: 20px;
+  z-index: 100;
+  text-align: center;  
+  background: #FFFFFF;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.hidden {
+  display: none;
+}
+
+.errorBox {
+  display: inline-block;
+  width: 320px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-top: 5px;
+  margin-left: -180px;
+  padding: 20px;
+  z-index: 100;
+  text-align: center;  
+  background: #FFFFFF;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.errorBox.hidden {
+  display: none;
+}
+
+.inputGroup {
+  display: flex;
+}
+
+.inputGroup input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 70%;
+  border: 0;
+  margin: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 30px;
+  font-weight: bold;
+  height: 70px;
+}
+.inputGroup button {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  outline: 0;
+  background: #4CAF50;
+  width: 30%;
+  border: 0;
+  padding: auto;
+  color: #FFFFFF;
+  font-size: 30px;
+  line-height: 10px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  height: 70px;
+}
+.inputGroup button:hover,.inputGroup button:active,.inputGroup button:focus {
+  background: #43A047;
+}
+
+.checks {
+  display: block;
+  width: 310px;
+  color: white;
+  
+  padding: 5px;
+  text-align: left;
+  font-size: 15px;
+  line-height: 30px;
+  margin: auto;
+  font-weight: bold;
+}
+
+.checks p {
+  text-align: center;
+  font-size: 30px;
+  text-decoration: underline;
+  font-weight: bolder;
+  margin: 10px 0 10px 0;
+}
+
+.checks ul {
+  list-style-type: square;
+  padding-left: 20px;
+  
+}
+
+.checks > ul > li > i {
+  float: right;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.pass-page {
+  width: 320px;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.pass {
+  position: relative;
+  z-index: 2;
+  background: #f2f2f2;
+  max-width: 250px;
+  margin: 10px auto 10px auto;
+  padding: 4px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);  
+  height: 25px;      
+}
+
+.numero {
+  display: table-cell;
+  float: left;
+  width: 3rem;  
+  text-align: center;
+  margin: auto 0 auto 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.hora {
+  display: table-cell;
+  float: left;
+  width: 10rem;  
+  vertical-align: middle;
+  text-align: center;
+  margin: auto 0 auto 0;
+  line-height: 25px;
+}
+
+.status {
+  display: table-cell;
+  float: right;
+  width: 2rem;
+  vertical-align: middle;
+  text-align: center;
+  margin: auto 0 auto 0;
+  line-height: 25px;
+}
+
+.footer {
+  position: fixed;  
+  left: 0;
+  bottom: -250px;
+  z-index: 50;
+  height: 320px;
+  width: 100%;
+  min-width: 360px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  -webkit-transition: 1s all ease;
+  -moz-transition: 1s all ease;
+  -ms-transition: 1s all ease;
+  transition: 1s all ease;
+}
+
+.fixfooter {
+  display: flex;  
+  height: 70px;  
+  width: 100%;
+  text-align: left;
+  line-height: 35px;
+}
+
+.fixfooter > div {
+  padding: 2px 10px 2px 10px;
+  display: inline-block;
+  width: calc(50% - 20px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fixfooter > div > p {
+  padding: 0;
+  margin: 0;
+}
+
+.fixfooter > div > i {
+  font-size: 40px;
+  line-height: 70px;  
+  float:right;
+}
+
+.fixfooter > div > i:hover {
+  color: #76b852;
+}
+
+.hiddenfooter {
+  width: 100%;
+  height: 250px;
+}
+
+.footer.shown {
+  position: fixed;
+  bottom: -0px;
+}
+
+.serverStatus {
+  display: block;
+  position: absolute;
+  top: -20px;
+  height: 20px;
+  width: 100%;  
+  text-align: center;  
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.serverStatus.up {
+  color: white;
+  background: green;
+}
+
+.serverStatus.down {
+  color: white;
+  background: red;
+}
+
+.hidden {
+  display: none;
+}
+
+.logout {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  font-size: 20px;
+  padding: 10px;
+  color: darkgrey;
+}
+
+.logout>a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logout>a:hover {
+  text-decoration: none;
+  color: #76b852;
+}
+
+.logout>a:active {
+  text-decoration: none;
+  color: #76b852;
+}

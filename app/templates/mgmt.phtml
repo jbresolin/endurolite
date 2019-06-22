@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+
+  <meta http-equiv="refresh" content="5">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+
+  <title>Enduro</title>
+
+  <link rel="stylesheet" href="/assets/css/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/> 
+  <link rel="stylesheet" href="/assets/css/style4.css"/>  
+  <script src="/assets/js/jquery-3.3.1.min.js"></script>  
+  <script src="/assets/js/script3.js"></script>
+
+  <script type="text/javascript">
+    var evento_id='<?= $evento_id ?>';
+    var username='<?= $username ?>';
+  </script>
+
+</head>
+
+<body>
+
+<div class="content">
+  <div class="table">
+    <table id="tbenduro">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0, 'num')">Carro</th>
+          <th onclick="sortTable(1)">Equipe</th>
+          <th onclick="sortTable(2, 'num')">Voltas</th>
+          <th onclick="sortTable(3)" class="extra">Tempo Volta Médio</th>
+          <th onclick="sortTable(4)" class="extra">Tempo Volta Mínimo</th>
+          <th onclick="sortTable(5)" class="extra">Tempo Volta Máximo</th>
+        </tr>
+      </thead>
+      <tbody>
+    <?php foreach($dados as $dado): ?>
+        <tr>
+          <td><?= $dado['equipe_id'] ?></td>
+          <td><?= $dado['equipe'] ?></td>
+          <td><?= $dado['lap_count'] ?></td>
+          <td class="extra"><?= (!$dado['lap_time_avg']) ? '-' : floor($dado['lap_time_avg']/60000).':'.str_pad(floor(($dado['lap_time_avg']/1000)-60*floor($dado['lap_time_avg']/60000)),2,'0', STR_PAD_LEFT) ?></td>
+          <td class="extra"><?= (!$dado['lap_time_min']) ? '-' : floor($dado['lap_time_min']/60000).':'.str_pad(floor(($dado['lap_time_min']/1000)-60*floor($dado['lap_time_min']/60000)),2,'0', STR_PAD_LEFT) ?></td>
+          <td class="extra"><?= (!$dado['lap_time_max']) ? '-' : floor($dado['lap_time_max']/60000).':'.str_pad(floor(($dado['lap_time_max']/1000)-60*floor($dado['lap_time_max']/60000)),2,'0', STR_PAD_LEFT) ?></td>
+        </tr>
+    <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="footer" id="footer">
+  <div class="fixfooter">
+    <div>
+      <p>Usuário: <?= $username ?></p>    
+      <p><b>Evento: <?= $evento_id ?></b></p>
+    </div>  
+    <div>
+      <i id="menutoggle" class="fa fa-bars"></i>
+    </div>
+  </div>
+  <div class="hiddenfooter">
+    <div class="logout">
+      <a href="/roleselect"><i class="far fa-edit"></i>&nbsp;Selecionar Função</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="javascript:;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>&nbsp;Sair</a>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

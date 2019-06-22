@@ -1,0 +1,11 @@
+<?php
+
+include_once("../app/templates/inc/header.phtml");
+
+if (isset($page)) {
+	include_once("../app/templates/" . $page . ".phtml");	
+}
+
+include_once("../app/templates/inc/footer.phtml");
+
+?>
